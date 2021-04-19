@@ -1,9 +1,22 @@
-let range = function (start, end, step) {
+function range (start, end, step) {
   let output = []; //store final array of nuber
 
 
   for (let a = start; a <= end; a += step) {
-    output.push(a);
+    if (start === undefined || end === undefined || step === undefined) {
+      return output;
+    }
+    else if (start >= end) {
+      return output;
+    }
+    else if (step <= 0){
+      return output;
+    }
+    else {
+      output.push(a);
+
+    }
+    
   }
   return output;
 }
